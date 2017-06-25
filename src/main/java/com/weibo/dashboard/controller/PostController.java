@@ -20,11 +20,12 @@ import com.weibo.util.ResponseData;
 public class PostController {
 	@Resource
 	PostService postService;
-	
+
 	@ResponseBody
 	@RequestMapping(value="/show",method=RequestMethod.GET)
 	public ResponseData findList(){
 		List<Post> list = postService.findList();
+		System.out.println(list+"list***********");
 		return new ResponseData(list);
 	}
 	@ResponseBody

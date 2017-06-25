@@ -19,9 +19,16 @@ app.config(['$routeProvider',function ($routeProvider) {
 		templateUrl:'dashboard/home.html',
 		controller:'homeCtrl'
 	})
+
+        .when('/traffic',{
+            templateUrl:'dashboard/traffic.html',
+            controller:'trafficCtrl'
+        })
+
 	.otherwise({redirectTo:'/signin'
-	});
-	
+	})
+
+
 }]);
 
 app.run(['$rootScope','$resource',function($rootScope,$resource){

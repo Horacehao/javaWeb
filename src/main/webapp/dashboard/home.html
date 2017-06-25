@@ -22,12 +22,14 @@
 							class="fa fa-star text-danger" ng-if="item.liked"></i> Like
 						</a> <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#replyModal" ng-click="setReplyPostId(item.id)"> <i
 							class="fa fa-mail-reply text-muted" ></i>
-							Reply
+							回复（reply）
 						</a>
 					</div>
 				</div>
 			</div>
 		</div>
+
+
 		<!-- .comment-reply -->
 		<div class="m-l-lg" ng-repeat="cItem in item.commentList">
 			<a class="pull-left m-l-n-sd">
