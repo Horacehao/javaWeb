@@ -17,12 +17,19 @@
 				</div>
 				<div class="panel-body">
 					<div class="">
-						{{item.likes}} <a class="btn btn-default btn-xs" ng-click="likeOrNot(item.id,item.liked=!item.liked)"> <i
-							class="fa fa-star-o text-muted" ng-if="!item.liked"></i> <i
-							class="fa fa-star text-danger" ng-if="item.liked"></i> Like
-						</a> <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#replyModal" ng-click="setReplyPostId(item.id)"> <i
+						{{item.likes}}
+						<a class="btn btn-default btn-xs" ng-click="likeOrNot(item.id,item.liked=!item.liked)">
+							<i class="fa fa-star-o text-muted" ng-if="!item.liked"></i>
+							<i class="fa fa-star text-danger" ng-if="item.liked"></i>
+							Like
+						</a>
+						<a class="btn btn-default btn-xs" data-toggle="modal" data-target="#replyModal" ng-click="setReplyPostId(item.id)"> <i
 							class="fa fa-mail-reply text-muted" ></i>
 							回复（reply）
+						</a>
+						<a class="btn btn-default btn-xs" data-toggle="modal" data-target="#replyModal" ng-if="item.authorName==username"> <i
+								class="fa fa-mail-reply text-muted" ></i>
+							delete
 						</a>
 					</div>
 				</div>

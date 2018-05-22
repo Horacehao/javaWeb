@@ -9,6 +9,7 @@ app.controller('homeCtrl',['$scope','$resource','$location',function($scope,$res
     	var postResource = $resource('post/show', {}, {query:{method:'GET',isArray:false}});
     	postResource.query({},function(res){
     		$scope.postList = res.data;
+            $scope.username = username;
 
     	}, function (res) {
         	console.log("error");
