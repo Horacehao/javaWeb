@@ -7,7 +7,7 @@ app.controller('signinCtrl', ['$rootScope', '$scope', '$resource','$location', f
     	userResource.login({},$scope.user, function (res) {
     		if(res.data==true){
     			setCookie("username", $scope.user.name,1);
-    			$location.path("/home");
+    			$location.path("/blog");
     		}else{
     			$scope.authError = "Authentication faliure";
 

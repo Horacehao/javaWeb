@@ -25,7 +25,13 @@ app.config(['$routeProvider',function ($routeProvider) {
             controller:'trafficCtrl'
         })
 
-	.otherwise({redirectTo:'/signin'
+        .when('/blog',{
+            templateUrl:'dashboard/blog.html',
+            controller:'blogCtrl'
+        })
+
+
+		.otherwise({redirectTo:'/signin'
 	})
 
 

@@ -142,8 +142,29 @@
 			<artifactId>hadoop-mapreduce-client-core</artifactId>
 			<version>2.6.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-core</artifactId>
+			<version>2.3.0-mr1-cdh5.1.5</version>
+		</dependency>
+
 	</dependencies>
+	<!--<build>-->
+		<!--<finalName>webproject</finalName>-->
+	<!--</build>-->
+
 	<build>
-		<finalName>webproject</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<configuration>
+					<excludeTransitive>false</excludeTransitive>
+					<stripVersion>true</stripVersion>
+					<outputDirectory>./lib</outputDirectory>
+				</configuration>
+
+			</plugin>
+		</plugins>
 	</build>
 </project>
