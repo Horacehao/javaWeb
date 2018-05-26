@@ -29,6 +29,10 @@ app.config(['$routeProvider',function ($routeProvider) {
             templateUrl:'dashboard/blog.html',
             controller:'blogCtrl'
         })
+        .when('/technology',{
+            templateUrl:'dashboard/technology.html',
+            controller:'technologyCtrl'
+        })
 
 
 		.otherwise({redirectTo:'/signin'
