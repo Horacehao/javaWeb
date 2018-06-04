@@ -15,7 +15,7 @@ import java.net.URL;
 
 public class GetPicProperties {
     public static void main(String[] args) throws Exception, Exception{
-        File file = new File("/Users/horace/Desktop/12.jpeg");
+        File file = new File("/Users/horace/Desktop/test2yuan.jpeg");
         printImageTags(file);
     }
     /**

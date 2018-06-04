@@ -8,7 +8,7 @@
 <div class="wrapper col1">
   <div id="header">
     <div id="logo">
-      <h1><a href="#">王忠浩的博客</a></h1>
+      <h1><a href="#">Horace的博客</a></h1>
       <p>http://horace.com</p>
     </div>
     <div id="topnav">
@@ -59,6 +59,39 @@
       <p>You can use and modify the template for both personal and commercial use. You must keep all copyright information and credit links in the template and associated files. For more CSS templates visit <a href="#">Free Website Templates</a>.</p>
       <p>Portortornec condimenterdum eget consectetuer condis consequam pretium pellus sed mauris enim. Puruselit mauris nulla hendimentesque elit semper nam a sapien urna sempus.</p>
       <h2>最新博客</h2>
+
+
+      <!--——————————————————————————————————-->
+
+      <div class="m-b b-l m-l-md streamline" ng-repeat="item in blogList" on-finish-render="ngRepeatFinished">
+        <div class="blog">
+          <a class="pull-left m-l-n-md">
+            <div>{{item.author}}</div>
+          </a>
+          <div class="m-l-lg panel b-a">
+            <div class="panel-heading pos-rlt b-b b-light">
+              <span class="arrow left"></span> <span>{{item.content}}</span> <label
+                    class="label bg-info m-l-xs" ng-if="item.authorName==username">Delete</label> <span
+                    class="text-muted m-l-sm pull-right"> <i
+                    class="fa fa-clock-o"></i> {{item.created_at|date:
+						'shortTime'}}&nbsp;&nbsp;{{item.created_at|date:'mediumDate' }}
+					</span>
+            </div>
+            <div class="panel-body">
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!--————————————————————————————————————————-->
+
+
+
+
+
       <table summary="Summary Here" cellpadding="0" cellspacing="0">
         <thead>
         <tr>

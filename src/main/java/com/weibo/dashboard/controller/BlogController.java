@@ -2,13 +2,11 @@ package com.weibo.dashboard.controller;
 
 
 import com.weibo.dashboard.entity.Blog;
-import com.weibo.dashboard.entity.Post;
 import com.weibo.dashboard.service.BlogService;
 import com.weibo.util.ResponseData;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -22,7 +20,9 @@ public class BlogController {
     @ResponseBody
     @RequestMapping(value="/show",method=RequestMethod.GET)
     public ResponseData findList(){
-        List<Post> list =  new ArrayList<Post>();
+//        List<Post> list =  new ArrayList<Post>();
+        List<Blog> list = blogService.findList();
+        System.out.println("bloglist size:"+list.size());
         return new ResponseData(list);
     }
 

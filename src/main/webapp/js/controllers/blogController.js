@@ -8,7 +8,7 @@ app.controller('blogCtrl',['$scope','$resource','$location',function($scope,$res
     $scope.showPosts = function() {
         var postResource = $resource('blog/show', {}, {query:{method:'GET',isArray:false}});
         postResource.query({},function(res){
-            $scope.postList = res.data;
+            $scope.blogList = res.data;
             $scope.username = username;
 
         }, function (res) {

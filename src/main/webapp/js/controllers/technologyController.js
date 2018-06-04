@@ -8,7 +8,7 @@ app.controller('technologyCtrl',['$scope','$resource','$location',function($scop
     $scope.showPosts = function() {
         var postResource = $resource('technology/show', {}, {query:{method:'GET',isArray:false}});
         postResource.query({},function(res){
-            $scope.postList = res.data;
+            $scope.blogList = res.data;
             $scope.username = username;
 
         }, function (res) {

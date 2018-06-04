@@ -14,9 +14,21 @@
 			<result property="cAuthorName" column="c_author_name" javaType="String"/>
 		</collection>
 	</resultMap>
-	<select id="findList" resultMap="postMap">
-		select * from posts left outer join comments on post_id = posts.id order by posts.date desc
+
+
+	<resultMap id="blogMap" type="com.weibo.dashboard.entity.Blog">
+		<id property="id" column="id" jdbcType="INTEGER"/>
+		<result property="title" column="title" jdbcType="VARCHAR"/>
+		<result property="author" column="author" jdbcType="VARCHAR"/>
+		<result property="author_id" column="author_id" jdbcType="INTEGER"/>
+		<result property="created_at" column="created_at" jdbcType="DATE"/>
+		<result property="updated_at" column="updated_at" jdbcType="DATE"/>
+		<result property="content" column="content" jdbcType="VARCHAR"/>
+	</resultMap>
+	<select id="findList" resultMap="blogMap">
+		select * from blogs  order by blogs.created_at desc
 	</select>
+
 	<select id="postByUser" resultMap="postMap">
 		select * from posts,comments where post_id = posts.id and posts.author_name = #{userName} order by posts.date desc
 	</select>
@@ -36,3 +48,10 @@
 		update posts set likes=IF(likes >0, likes-1,0) where id=#{id}
 	</update>
 </mapper>
+
+
+<!--
+
+		INSERT INTO `weibo`.`blogs` (`id`, `title`, `author`, `author_id`, `created_at`, `updated_at`, `content`) VALUES ('1', '第一个博客', 'root', '1', '2018-06-05 09:00:00', '2018-06-05 09:00:00', '这是第一个博客');
+		INSERT INTO `weibo`.`blogs` (`id`, `title`, `author`, `author_id`, `created_at`, `updated_at`, `content`) VALUES ('2', '第二个博客', 'root', '1', '2018-06-05 09:00:01', '2018-06-05 09:00:01', '这是第二个博客');
+-->

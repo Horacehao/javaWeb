@@ -4,7 +4,7 @@ package com.weibo.dashboard.controller;
 import com.weibo.dashboard.entity.Blog;
 import com.weibo.dashboard.entity.Post;
 import com.weibo.dashboard.service.BlogService;
-import com.weibo.dashboard.service.TechnologyService;
+
 import com.weibo.util.ResponseData;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,14 +16,16 @@ import java.util.List;
 @RestController
 @RequestMapping(value="/technology")
 public class TechnologyController {
+
     @Resource
-    TechnologyService technologyService;
+    BlogService blogService;
 
 
     @ResponseBody
     @RequestMapping(value="/show",method=RequestMethod.GET)
     public ResponseData findList(){
-        List<Post> list =  new ArrayList<Post>();
+        List<Blog> list = blogService.findList();
+        System.out.println("bloglist size:"+list.size());
         return new ResponseData(list);
     }
 
@@ -31,7 +33,7 @@ public class TechnologyController {
 
     @RequestMapping(value="/{id}",method=RequestMethod.DELETE)
     public int delete(@PathVariable("id") int id){
-        int res = technologyService.delete(id);
+        int res =0;
         return res;
     }
     @ResponseBody
